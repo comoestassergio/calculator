@@ -21,12 +21,24 @@ html, body {
 
     width: 500px;
     height: 500px;
+
+    background-color: #999;
+
+    gap: .75rem;
+
+    padding: 2rem;
+
+    border-radius: 1.5rem;
+
+    box-shadow: .5em .5em .75em rgba(0, 0, 0, .3);
 }
 
 .result {
     grid-column-start: 1;
     grid-column-end: 5;
+
     border: 1px solid black;
+    border: none;
 
     font-size: 2.5rem;
 
@@ -35,8 +47,44 @@ html, body {
     align-items: center;
 
     padding-right: 2rem;
+    margin-bottom: 1rem;
+
+    border-radius: 3rem;
+
+    background-color: rgb(236, 236, 236);
 }
 
 button {
     font-size: 2.25rem;
+    border-radius: 3rem;
+    border: none;
+
+    background-color: rgb(236, 236, 236);
+
+    transition: background-color 200ms ease;
+}
+
+button:hover {
+    cursor: pointer;
+   
+}
+
+.operator {
+    background-color: rgb(255, 255, 213);
+}
+
+.operator:hover {
+    background-color: rgb(253, 253, 181);
+}
+
+.clear {
+    background-color: rgb(250, 200, 200);
+}
+
+.clear:hover {
+    background-color: rgb(255, 188, 188);
+}
+
+.num:hover {
+    background-color: rgb(245, 245, 245);
 }
