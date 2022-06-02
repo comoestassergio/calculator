@@ -32,7 +32,8 @@ buttons.forEach(button => {
         }else if (!button.classList.contains("add") &&
                     !button.classList.contains("subtract") &&
                     !button.classList.contains("multiply") &&
-                    !button.classList.contains("divide"))
+                    !button.classList.contains("divide") &&
+                    !button.classList.contains("clear"))
                     {
                         nums.push(parseInt(button.textContent))
                         resultField.textContent = button.textContent
@@ -59,15 +60,15 @@ function divide (a, b) {
 
 function operate(arr, operator) {
     if (operator == "+"){
-        resultField.textContent = arr.reduce((total, el) => (total + el),0)
+        resultField.textContent = add(arr[0], arr[1])
     }
     if (operator == "*"){
-        resultField.textContent = arr.reduce((total, el) => (total * el),1)
+        resultField.textContent = multiply(arr[0], arr[1])
     }
     if (operator == "-"){
-        resultField.textContent = arr[0] - arr[1]
+        resultField.textContent = subtract(arr[0], arr[1])
     }
     if (operator == "/"){
-        resultField.textContent = arr[0] / arr[1]
+        resultField.textContent = divide(arr[0], arr[1])
     }
 }

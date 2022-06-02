@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+
 * {
-    font-family: monospace;
+    font-family: Montserrat;
 }
 
 html, body {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 .main-cont {
@@ -13,6 +17,8 @@ html, body {
     justify-content: center;
 
     height: 100vh;
+
+    background: linear-gradient(325deg, #171738, #2E1760, #F7D08A);
 }
 
 .grid {
@@ -22,7 +28,7 @@ html, body {
     width: 500px;
     height: 500px;
 
-    background-color: #999;
+    background-color: #1f2041;
 
     gap: .75rem;
 
@@ -61,16 +67,20 @@ button {
 
     background-color: rgb(236, 236, 236);
 
-    transition: background-color 200ms ease;
+    transition: background-color 200ms ease,
+                transform 150ms ease;
 }
 
 button:hover {
     cursor: pointer;
-   
+}
+
+.active {
+    transform: scale(1.1);
 }
 
 .operator {
-    background-color: rgb(255, 255, 213);
+    background-color: #ffc857;
 }
 
 .operator:hover {
@@ -78,7 +88,7 @@ button:hover {
 }
 
 .clear {
-    background-color: rgb(250, 200, 200);
+    background-color: #fc440f;
 }
 
 .clear:hover {
