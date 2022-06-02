@@ -41,6 +41,17 @@ buttons.forEach(button => {
     })
 })
 
+buttons.forEach(button => {
+    button.addEventListener("click", function(){
+        button.classList.add("active")
+    })
+    button.addEventListener("transitionend", function(){
+        button.classList.remove("active")
+    })
+})
+
+
+
 
 function add (a, b) {
     return a + b
