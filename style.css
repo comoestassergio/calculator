@@ -18,7 +18,7 @@ html, body {
 
     height: 100vh;
 
-    background: linear-gradient(325deg, #171738, #2E1760, #F7D08A);
+    background: linear-gradient(325deg, #171738 50%, #2E1760 50%, #F7D08A 50%);
 }
 
 .grid {
