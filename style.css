@@ -29,7 +29,7 @@ html, body {
     display: grid;
     grid-template: repeat(5, 1fr) / repeat(4, 1fr);
 
-    width: 500px;
+    width: 400px;
     height: 500px;
 
     background-color: #1f2041;
@@ -82,6 +82,8 @@ button {
     font-size: 2.25rem;
     border-radius: 3rem;
     border: none;
+
+    aspect-ratio: 1 / 1;
 
     background-color: rgb(236, 236, 236);
 
