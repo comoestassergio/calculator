@@ -5,6 +5,8 @@ const root = document.documentElement
 let nums = []
 let operator = []
 let resultContent = " " 
+let errorMsg = "Error"
+
 
 buttons.forEach(button => {
     button.addEventListener("click", function(){
@@ -30,7 +32,7 @@ buttons.forEach(button => {
         } 
         if (button.classList.contains("operate")){
             nums.push(parseInt(resultField.textContent))
-            operate()
+            resultField.textContent = operate()
         }else if (!button.classList.contains("add") &&
                     !button.classList.contains("subtract") &&
                     !button.classList.contains("multiply") &&
@@ -43,7 +45,7 @@ buttons.forEach(button => {
                             resultField.textContent = ""
                             resultField.textContent += button.textContent
                         } else {
-                            resultField.textContent += button.textContent
+                            checkResultLength(button)
                         }
                     }
     })
@@ -83,10 +85,30 @@ function pushNumsOperator(button){
 
 function checkNums() {
     if (nums.length > 1) {
-        operate()
+        resultField.textContent = operate()
         nums.push(parseInt(resultField.textContent))
     } else {
         resultField.textContent = ""
+    }
+}
+
+/* check resultField length and not allows input if it's greater than 13 */
+
+function checkResultLength(button) {
+    if (resultField.textContent.length < 13){
+        resultField.textContent += button.textContent
+    } else {
+        const splitResult = resultField.textContent.split("")
+        let newResult = []
+        splitResult.forEach(item => {
+            if (newResult.length<13){
+                newResult.push(item)
+            }
+            else {
+                return
+            }
+        return newResult.join("")
+    })
     }
 }
 
@@ -127,20 +149,28 @@ function clear(condition) {
 
 function operate() {
     let currentOperator = operator[0]
+    let operationResult
+    let tempResultArr = [] 
     if (currentOperator == "+"){
-        resultField.textContent = add(nums)
+        operationResult = add(nums)
         clear(1)
     }
     if (currentOperator == "*"){
-        resultField.textContent = multiply(nums)
+        operationResult = multiply(nums)
         clear(1)
     }
     if (currentOperator == "-"){
-        resultField.textContent = subtract(nums)
+        operationResult = subtract(nums)
         clear(1)
     }
     if (currentOperator == "/"){
-        resultField.textContent = divide(nums)
+        operationResult = divide(nums)
         clear(1)
+    }
+
+    if (operationResult.toString().length > 13){
+        return errorMsg
+    } else {
+        return operationResult
     }
 }
