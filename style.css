@@ -52,12 +52,14 @@ html, body {
     border: none;
 
     font-size: 2.5rem;
+    font-family: monospace;
 
     display: flex;
     justify-content: flex-end;
     align-items: center;
 
     padding-right: 2rem;
+    padding-left: 2rem;
     margin-bottom: 1rem;
 
     border-radius: 3rem;
@@ -72,7 +74,7 @@ html, body {
     height: 2.5rem;
     width: 2.5rem;
 
-    top: 15%;
+    top: 20%;
     right: 5%;
 
     color: #555;
