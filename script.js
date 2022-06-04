@@ -150,7 +150,7 @@ function clear(condition) {
 function operate() {
     let currentOperator = operator[0]
     let operationResult
-    let tempResultArr = [] 
+
     if (currentOperator == "+"){
         operationResult = add(nums)
         clear(1)
@@ -167,10 +167,12 @@ function operate() {
         operationResult = divide(nums)
         clear(1)
     }
+    
+    let roundedResult = operationResult.toFixed(2)
 
-    if (operationResult.toString().length > 13){
+    if (roundedResult.length > 13){
         return errorMsg
     } else {
-        return operationResult
+        return roundedResult
     }
 }
